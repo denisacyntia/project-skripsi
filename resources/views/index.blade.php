@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title')
     <title>Dashboard</title>
@@ -57,3 +57,4 @@
         </div>
     </main>
 @endsection
+

@@ -14,12 +14,12 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Muli:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/venobox/venobox.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
     <!-- Bootstrap Date-Picker Plugin -->
@@ -39,7 +39,7 @@
         </div>
         <nav class="nav-menu d-none d-lg-block">
             <ul>
-                <li><a href="{{--{{route('front.article')}}--}}">Artikel</a></li>
+                <li><a href="{{route('front.article')}}">Artikel</a></li>
                 <li><a href="{{url('/konseling')}}">Konseling</a></li>
                 @if (Auth::guest())
                     <li><a href="{{ url('tanyajawab') }}">Tanya Jawab</a></li>
@@ -64,7 +64,8 @@
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <ul class="drop-down" role="menu">
-                            <li><a href="{{url('/edit-profile')}}">Edit Profile</a></li>
+                            <li><a href="{{route('customer.dashboard')}}">Dashboard</a></li>
+                            <li><a href="{{url('/customer/profil')}}">Edit Profile</a></li>
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                     <i class="fa fa-btn fa-sign-out"></i>Logout</a>

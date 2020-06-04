@@ -14,4 +14,9 @@ class Category extends Model
     {
         $this->attributes['slug'] = Str::slug($value);
     }
+    public function forum()
+    {
+        return $this->hasMany(Forum::class);
+    }
+
 }

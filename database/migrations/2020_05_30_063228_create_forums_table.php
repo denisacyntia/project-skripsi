@@ -15,9 +15,10 @@ class CreateForumsTable extends Migration
     {
         Schema::create('forums', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('slug');
-            $table->string('description');
-            $table->unsignedBigInteger('');
+            $table->string('slug')->nullable();
+            $table->text('description');
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

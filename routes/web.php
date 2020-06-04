@@ -25,13 +25,19 @@ Route::get('/article/{slug}', 'FrontController@show')->name('front.show_product'
 Route::get('/tentang-kami', function (){
     return view('about-us');
 });
+/*Route::get('/tanya-jawab', function (){
+    return view('forum');
+})*/;
 
 Route::group(['middleware' => 'auth'], function (){
+    Route::resource('tanya-jawab', 'ForumController')->except(['show']);
 
-    Route::group(['prefix' => 'customer'], function (){
+
+    Route::group(['prefix' => 'klien'], function (){
         Route::get('/profil', function (){
             return view('profile');
         });
+        Route::post('/profil','Customer\ProfileController@update')->name('customer.update');
         Route::get('/dashboard', 'Customer\DashboardController@dashboard')->name('customer.dashboard');
     });
 

@@ -42,15 +42,15 @@
                 <li><a href="{{route('front.article')}}">Artikel</a></li>
                 <li><a href="{{url('/konseling')}}">Konseling</a></li>
                 @if (Auth::guest())
-                    <li><a href="{{ url('tanyajawab') }}">Tanya Jawab</a></li>
+                    <li><a href="{{ url('/tanya-jawab') }}">Tanya Jawab</a></li>
                 @else
                     <li class="drop-down">
                         <a href="#" class="drop-down" data-toggle="dropdown" role="button" aria-expanded="false">
                             Tanya Jawab<span class="caret"></span>
                         </a>
                         <ul class="drop-down" role="menu">
-                            <li><a href="{{url('/buat-tanyajawab')}}">Buat Pertanyaan</a></li>
-                            <li><a href="{{url('/tanyajawab')}}">List Tanya Jawab</a></li>
+                            <li><a href="{{route('tanya-jawab.create')}}">Buat Pertanyaan</a></li>
+                            <li><a href="{{route('tanya-jawab.index')}}">List Tanya Jawab</a></li>
                         </ul>
                     </li>
                 @endif
@@ -65,7 +65,7 @@
                         </a>
                         <ul class="drop-down" role="menu">
                             <li><a href="{{route('customer.dashboard')}}">Dashboard</a></li>
-                            <li><a href="{{url('/customer/profil')}}">Edit Profile</a></li>
+                            <li><a href="{{url('/klien/profil')}}">Edit Profile</a></li>
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                     <i class="fa fa-btn fa-sign-out"></i>Logout</a>

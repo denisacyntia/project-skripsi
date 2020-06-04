@@ -49,28 +49,6 @@
                                         </select>
                                         <p class="text-danger">{{ $errors->first('status') }}</p>
                                     </div>
-                                    {{--<div class="form-group">
-                                        <label for="category_id">Kategori</label>
-
-                                        <!-- DATA KATEGORI DIGUNAKAN DISINI, SEHINGGA SETIAP PRODUK USER BISA MEMILIH KATEGORINYA -->
-                                        --}}{{--<select name="category_id" class="form-control">
-                                            <option value="">Pilih</option>
-                                            @foreach ($category as $row)
-                                                <option value="{{ $row->id }}" {{ old('category_id') == $row->id ? 'selected':'' }}>{{ $row->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        <p class="text-danger">{{ $errors->first('category_id') }}</p>--}}{{--
-                                    </div>--}}
-                                    {{--<div class="form-group">
-                                        <label for="price">Harga</label>
-                                        <input type="number" name="price" class="form-control" value="{{ old('price') }}" required>
-                                        <p class="text-danger">{{ $errors->first('price') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="weight">Berat</label>
-                                        <input type="number" name="weight" class="form-control" value="{{ old('weight') }}" required>
-                                        <p class="text-danger">{{ $errors->first('weight') }}</p>
-                                    </div>--}}
                                     <div class="form-group">
                                         <label for="image">Gambar Artikel</label>
                                         <input type="file" name="image" class="form-control" value="{{ old('image') }}" required>

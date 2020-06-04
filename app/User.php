@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'fullname', 'name', 'email', 'password', 'gender', 'phone', 'image'
+        'fullname', 'name','slug', 'email', 'password', 'gender', 'phone', 'image'
     ];
 
     /**
@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function forum(){
+        return $this->hasMany(Forum::class);
+    }
+
 }

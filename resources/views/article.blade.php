@@ -55,7 +55,7 @@
                                     <button type="submit"><i class="icofont-search"></i></button>
                                 </form>
                             </div><!-- End sidebar search form-->
-                            <div class="sidebar-item recent-posts">
+                           {{-- <div class="sidebar-item recent-posts">
                                 @foreach($articles as $row)
                                     <div class="post-item clearfix">
                                         <img src="{{asset('storage/article/' . $row->image)}}" alt="">
@@ -63,7 +63,7 @@
                                         <time datetime="2020-01-01">Jan 1, 2020</time>
                                     </div>
                                 @endforeach
-                            </div>
+                            </div>--}}
                         @else
                             <div>Oops.. Data <b>{{$cari}}</b> Tidak ditemukan</div>
                         @endif

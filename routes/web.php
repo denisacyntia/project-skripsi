@@ -22,22 +22,25 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/artikel', 'FrontController@article')->name('front.article');
 Route::get('/article/{slug}', 'FrontController@show')->name('front.show_product');
+Route::get('/article/cari', 'FrontController@cari');
 Route::get('/tentang-kami', function (){
     return view('about-us');
 });
 /*Route::get('/tanya-jawab', function (){
     return view('forum');
 })*/;
-
+Route::get('/tanya-jawab', 'ForumController@index')->name('tanya-jawab.index');
 Route::group(['middleware' => 'auth'], function (){
-    Route::resource('tanya-jawab', 'ForumController')->except(['show']);
+    /*Route::resource('tanya-jawab', 'ForumController')->except(['show']);*/
 
+    Route::get('/tanya-jawab/buat', 'ForumController@create')->name('tanya-jawab.create');
+    Route::post('/tanya-jawab/buat', 'ForumController@store')->name('tanya-jawab.store');
 
     Route::group(['prefix' => 'klien'], function (){
         Route::get('/profil', function (){
             return view('profile');
         });
-        Route::post('/profil','Customer\ProfileController@update')->name('customer.update');
+        Route::put('/profil','Customer\ProfileController@update')->name('customer.update');
         Route::get('/dashboard', 'Customer\DashboardController@dashboard')->name('customer.dashboard');
     });
 

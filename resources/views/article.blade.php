@@ -50,12 +50,12 @@
                         <h3 class="sidebar-title">Cari Artikel</h3>
                         @if(count($articles))
                             <div class="sidebar-item search-form">
-                                <form action="{{url('/article/' .$row->slug)}}" method="GET">
-                                    <input type="text" name="cari" value="{{old('cari')}}">
+                                {{--<form action="{{url('/article/cari')}}" method="GET">--}}
+                                    <input type="text" name="q" value="{{ request()->q }}">
                                     <button type="submit"><i class="icofont-search"></i></button>
-                                </form>
+                                {{--</form>--}}
                             </div><!-- End sidebar search form-->
-                           {{-- <div class="sidebar-item recent-posts">
+                            <div class="sidebar-item recent-posts">
                                 @foreach($articles as $row)
                                     <div class="post-item clearfix">
                                         <img src="{{asset('storage/article/' . $row->image)}}" alt="">
@@ -63,7 +63,7 @@
                                         <time datetime="2020-01-01">Jan 1, 2020</time>
                                     </div>
                                 @endforeach
-                            </div>--}}
+                            </div>
                         @else
                             <div>Oops.. Data <b>{{$cari}}</b> Tidak ditemukan</div>
                         @endif
